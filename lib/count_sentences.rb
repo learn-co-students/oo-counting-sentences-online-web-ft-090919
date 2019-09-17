@@ -1,6 +1,6 @@
 
 
-lass String
+class String
   attr_accessor :string
   def sentence?
     self.end_with?(".")
@@ -15,6 +15,6 @@ lass String
   end
 
   def count_sentences
-    self.split.count
+    self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
   end
 end
